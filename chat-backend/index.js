@@ -11,8 +11,10 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "https://vercel.com/manu-tyagi90s-projects/my-chat-app/13aTM2ZwAUYQ2wc1m4L8z8TBoXdZ", // your deployed frontend
-      "http://localhost:5173"             // for local dev
+      "http://localhost:5173", // local dev
+      "https://my-chat-app-gamma.vercel.app",
+      "https://my-chat-app-git-master-manu-tyagi90s-projects.vercel.app",
+      "https://my-chat-9cjaz9iei-manu-tyagi90s-projects.vercel.app"
     ],
     methods: ["GET", "POST"]
   }
