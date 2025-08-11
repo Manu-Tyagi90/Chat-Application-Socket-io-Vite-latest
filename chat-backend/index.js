@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "https://your-frontend.vercel.app", // your deployed frontend
+      "https://vercel.com/manu-tyagi90s-projects/my-chat-app/13aTM2ZwAUYQ2wc1m4L8z8TBoXdZ", // your deployed frontend
       "http://localhost:5173"             // for local dev
     ],
     methods: ["GET", "POST"]
@@ -19,8 +19,8 @@ const io = new Server(server, {
 });
 
 // Shared state
-const roomMessages = {}; // { roomName: [messages] }
-const onlineUsers = {};  // { username: socket.id }
+const roomMessages = {}; 
+const onlineUsers = {};  
 const rooms = new Set(["General"]); // Default room
 
 // Import handlers
