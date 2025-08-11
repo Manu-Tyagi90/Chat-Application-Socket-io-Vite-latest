@@ -10,7 +10,10 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: [
+      "https://your-frontend.vercel.app", // your deployed frontend
+      "http://localhost:5173"             // for local dev
+    ],
     methods: ["GET", "POST"]
   }
 });
