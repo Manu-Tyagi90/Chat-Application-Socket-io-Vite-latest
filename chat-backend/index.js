@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "http://localhost:5173", // local dev
+      "http://localhost:5173",
       "https://my-chat-app-gamma.vercel.app",
       "https://my-chat-app-git-master-manu-tyagi90s-projects.vercel.app",
       "https://my-chat-9cjaz9iei-manu-tyagi90s-projects.vercel.app"
@@ -21,22 +21,21 @@ const io = new Server(server, {
 });
 
 // Shared state
-const roomMessages = {}; 
-const onlineUsers = {};  
-const rooms = new Set(["General"]); // Default room
+const roomMessages = {};
+const onlineUsers = {};
+const rooms = new Set(["General"]);
 
 // Import handlers
 const roomHandlers = require("./handlers/rooms");
 const messageHandlers = require("./handlers/messages");
 const userHandlers = require("./handlers/users");
-const typingHandlers = require("./handlers/typing"); // <-- Add this line
+const typingHandlers = require("./handlers/typing");
 
 io.on("connection", (socket) => {
   roomHandlers(io, socket, roomMessages, rooms);
   messageHandlers(io, socket, roomMessages);
   userHandlers(io, socket, onlineUsers, rooms);
-  typingHandlers(io, socket); // <-- Add this line
-  // Add more handlers as needed
+  typingHandlers(io, socket);
 });
 
 const PORT = 3000;
