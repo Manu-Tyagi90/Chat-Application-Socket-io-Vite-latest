@@ -25,6 +25,16 @@
 
 ChatConnect is a WhatsApp-inspired real-time chat application that brings people together through instant messaging. Built with modern web technologies, it offers a seamless chatting experience with beautiful UI/UX and powerful real-time features.
 
+<div align="center">
+  
+
+https://github.com/user-attachments/assets/04c6bce5-a729-40a4-bf96-3078342da125
+
+
+ChatConnect in action - Real-time messaging demo
+
+</div>
+
 ### 🎯 Why ChatConnect?
 
 - **🚀 Lightning Fast** - Real-time messaging with Socket.IO
